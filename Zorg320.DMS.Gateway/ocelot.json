@@ -1,0 +1,15 @@
+{
+  "SwaggerEndPoints": [
+    {
+      "Key": "DMS Write",
+      "Config": [
+        {
+          "Name": "DMS Write API",
+          "Version": "v1",
+          "Url": "http://localhost:7008/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {}
+}

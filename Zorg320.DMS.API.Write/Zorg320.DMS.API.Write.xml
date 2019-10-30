@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Zorg320.DMS.API.Write</name>
+    </assembly>
+    <members>
+        <member name="T:Zorg320.DMS.API.Write.Controllers.CategorieController">
+            <summary>
+            Controlleur d'une catégorie
+            </summary>
+        </member>
+        <member name="F:Zorg320.DMS.API.Write.Controllers.CategorieController._commandBus">
+            <summary>
+            Bus qui gère les commandes
+            </summary>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Controllers.CategorieController.#ctor(EventFlow.ICommandBus)">
+            <summary>
+            Controlleur des catégories (uniquement en écriture)
+            </summary>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Controllers.CategorieController.Create(Zorg320.DMS.API.Write.DTO.CreateCategorieDTO)">
+            <summary>
+            Création d'une catégorie
+            </summary>
+            <returns>Résultat de la création</returns>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Controllers.CategorieController.UpdateLabel(System.String,Zorg320.DMS.API.Write.DTO.UpdateLabelCategorieDTO)">
+            <summary>
+            Met à jour le label de la catégorie
+            </summary>
+            <param name="id">Identifiant de la catégorie</param>
+            <param name="message">Informations de mise à jour</param>
+            <returns>Résultat de la mise à jour</returns>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Controllers.CategorieController.Reorder(System.String,System.String)">
+            <summary>
+            Met à jour le label de la catégorie
+            </summary>
+            <param name="id">Identifiant de la catégorie</param>
+            <param name="message">Informations de mise à jour</param>
+            <returns>Résultat de la mise à jour</returns>
+        </member>
+        <member name="T:Zorg320.DMS.API.Write.DTO.CreateCategorieDTO">
+            <summary>
+            Informations de création d'une catégorie
+            </summary>
+        </member>
+        <member name="P:Zorg320.DMS.API.Write.DTO.CreateCategorieDTO.Label">
+            <summary>
+            Label de la catégorie
+            </summary>
+        </member>
+        <member name="T:Zorg320.DMS.API.Write.DTO.FaultDTO">
+            <summary>
+            Classe qui permet de gérer les erreurs 
+            </summary>
+        </member>
+        <member name="F:Zorg320.DMS.API.Write.DTO.FaultDTO._errors">
+            <summary>
+            Liste interne des erreurs
+            </summary>
+        </member>
+        <member name="P:Zorg320.DMS.API.Write.DTO.FaultDTO.Errors">
+            <summary>
+            Propriété qui affiche la liste des erreurs
+            </summary>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.DTO.FaultDTO.#ctor(System.Collections.Generic.IEnumerable{Zorg320.DMS.CommandHandler.Error})">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="errors">liste d'erreur</param>
+        </member>
+        <member name="T:Zorg320.DMS.API.Write.DTO.ErrorDTO">
+            <summary>
+            Erreur
+            </summary>
+        </member>
+        <member name="P:Zorg320.DMS.API.Write.DTO.ErrorDTO.Id">
+            <summary>
+            Identifiant de l'erreir
+            </summary>
+        </member>
+        <member name="P:Zorg320.DMS.API.Write.DTO.ErrorDTO.Message">
+            <summary>
+            Message de l'erreur
+            </summary>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.DTO.ErrorDTO.#ctor(System.String,System.String)">
+            <summary>
+            Constructeur
+            </summary>
+            <param name="id">identifiant de l'erreuir</param>
+            <param name="message">Message de l'erreur</param>
+        </member>
+        <member name="T:Zorg320.DMS.API.Write.DTO.UpdateLabelCategorieDTO">
+            <summary>
+            Informations pemettant de mettre à jour le label de la catégorie
+            </summary>
+        </member>
+        <member name="P:Zorg320.DMS.API.Write.DTO.UpdateLabelCategorieDTO.NewLabel">
+            <summary>
+            Nouveau label de la catégorie
+            </summary>
+        </member>
+        <member name="T:Zorg320.DMS.API.Write.Program">
+            <summary>
+            Lancement de l'API web
+            </summary>
+        </member>
+        <member name="P:Zorg320.DMS.API.Write.Program.Configuration">
+            <summary>
+            Configuration de l'application
+            </summary>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Program.Main(System.String[])">
+            <summary>
+            Démarrage
+            </summary>
+            <param name="args">Arguements</param>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Constructeur du host
+            </summary>
+            <param name="args">Arguments</param>
+            <returns>Le host à builder et a runner</returns>
+        </member>
+        <member name="T:Zorg320.DMS.API.Write.Startup">
+            <summary>
+            Classe de configuration du Host
+            </summary>
+        </member>
+        <member name="F:Zorg320.DMS.API.Write.Startup._configuration">
+            <summary>
+            Configuration de l'application
+            </summary>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructeur de la classe de configuration
+            </summary>
+            <param name="configuration">Injection de la configuration de l'application</param>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Classe appelé par le runtime core , permet d'ajouter des service dans le conteneur
+            </summary>
+            <param name="services">Collection de service </param>
+        </member>
+        <member name="M:Zorg320.DMS.API.Write.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Appelé par le runtime, permet de configurer le pipeline HTTP
+            </summary>
+            <param name="app">Constructeur de l'application</param>
+            <param name="env">Environnement d'hébergement</param>
+        </member>
+    </members>
+</doc>
